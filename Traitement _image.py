@@ -27,6 +27,7 @@ def create_image (name,h,w) :
         p=p+1
         x=x-1
         y=y-1   
+        
     
     plt.imsave(name, img)
 
@@ -51,29 +52,32 @@ def inversion (img) :
 #b=inversion(a)
 #plt.imshow(b)
 #plt.show()
-
+"""
 def separation (img) :
-    img_rouge = np.zeros((20, 20, 3))
-    img_vert = np.zeros((20, 20, 3))
-    img_bleu = np.zeros((20, 20, 3))
+    n = img.shape
+    img_rouge = np.zeros((n[0], n[1], 3))
+    img_vert = np.zeros((n[0], n[1], 3))
+    img_bleu = np.zeros((n[0], n[1], 3))
     
-    rouge=[1,0,0]
-    cyan=[0,1,1]
-    jaune=[1,1,0]
-    vert=[0,1,0]
-
+    
+    """
     for i in range(img.shape[0]) :
         for j in range(img.shape[1]) :
             #print(img_rouge[i])
             img_rouge[i,j,0]=img[i,j,0]
+    """
     img_rouge[:,:,0]=img[:,:,0]
-    #img_vert[:,:,1]=img[:,:,1]
-    #img_bleu[:,:,2]=img[:,:,2]
+    img_vert[:,:,1]=img[:,:,1]
+    img_bleu[:,:,2]=img[:,:,2]
 
     return img_rouge
+
+b=separation(a)
+plt.imshow(b)
+plt.show()
 """
 #########################################################################
-"""
+mpimg.imread('C:/Users/utilisateur/Documents/Python/Python/IA.png')
 a = pl.imread('c:/Users/ThinkCentre/Documents/Python/Coline.PNG')
 #print(a.shape)
 b=a
