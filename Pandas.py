@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
+import scipy.stats as sc
 
 df = pd.read_table('C:/Users/utilisateur/Documents/Python/Python/heart.txt',sep='\t',header=0)
 
@@ -55,6 +56,7 @@ a = pd.read_csv('C:/Users/utilisateur/Documents/Python/Python/Automobile_data.cs
 #ex5
 
 #b = a.loc[:,['company','price']].groupby('company').max()
+b = a.loc[:,[a.company,a.price]].groupby('company').max()
 #print(b)
 #b.plot(kind='bar')
 #plt.show()
@@ -67,6 +69,15 @@ a = pd.read_csv('C:/Users/utilisateur/Documents/Python/Python/Automobile_data.cs
 #plt.show()
 #######################################################
 #ex7
-b = a.sort_values(by='price')
-print(b)
+#b = a.sort_values(by='price')
+#print(b)
+#################################################
+#plus
+#b = pd.read_csv('C:/Users/utilisateur/Documents/Python/Python/tips.csv',sep=',',header=0)
+
+#pd.scatter_matrix(b)
+
+#plt.show()
+
+
 
