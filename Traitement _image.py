@@ -2,61 +2,44 @@ import matplotlib.image as mpimg
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
-"""
-rouge=[1,0,0]
-cyan=[0,1,1]
-jaune=[1,1,0]
-vert=[0,1,0]
 
 def create_image (name,h,w) :
-    img = np.zeros((h, w, 3))
+    img = np.ones((h, w, 3))
     rouge=[1,0,0]
     cyan=[0,1,1]
     jaune=[1,1,0]
     vert=[0,1,0]
+    
     p=0
-    s=w
-    t=0
-    u=h//2
-    z=h//2
-
-    while p<=w//2 :
-        img[p:z,s:]=jaune
-        img[:t,t:s]=rouge
-        img[p:z,:t]=vert
-        
-        s=s-1
-        t=t+1
-        p=p+1
-        u=u+1
-    p=0
+    x=h
+    y=h//2
     s=w//2
     u=w//2
     t=h//2
     while p<=w :
+        img[:p,p:x]=rouge
         img[t:,s:u]=cyan
-        img[t:,u:]=jaune
-        img[t:,:s]=vert
+        img[y:t,u:]=jaune
+        img[p:x,:p]=vert
         s=s-1
         u=u+1
         t=t+1
         p=p+1
-    
-    
-    
+        x=x-1
+        y=y-1   
     
     plt.imsave(name, img)
 
     return img
     
-a=create_image("matricecolor.png",20,20)
+a=create_image("matricecolor.png",200,200)
 
 #print(a)
-#plt.imshow(a)
-#plt.show()
+plt.imshow(a)
+plt.show()
 
 
-
+"""
 
 
 def inversion (img) :
@@ -90,6 +73,7 @@ def separation (img) :
     return img_rouge
 """
 #########################################################################
+"""
 a = pl.imread('c:/Users/ThinkCentre/Documents/Python/Coline.PNG')
 #print(a.shape)
 b=a
@@ -103,6 +87,7 @@ bleu= [0,0,1]
 
 c= np.zeros((10,10,3))
 c[:,:]=rouge
+"""
 """
 def crea(c):
     rouge=[1,0,0]
@@ -118,7 +103,7 @@ def crea(c):
                 print(k)
  
     return c
-"""
+
 
 def transform (a) :
     
@@ -140,10 +125,10 @@ def rgb2gray(img):
 #c= transform(c)
 #c.getpixel((0,0))[0]
 c= rgb2gray(a)
-"""
+
 print(b)
 mpimg.imsave('c:/Users/ThinkCentre/Documents/Python/Coline_modif.PNG',b)
-"""
+
 pl.imshow(c)
 pl.show()
                 
@@ -157,4 +142,4 @@ b=separation(a)
 plt.imshow(b)
 plt.show()
 
-
+"""
