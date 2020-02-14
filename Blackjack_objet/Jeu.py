@@ -2,16 +2,22 @@ import pandas as pd
 import numpy as np
 import random
 import matplotlib.image as mpimg
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 from Joueur import Joueur
 from Croupier import Croupier
 from JeuDeCarte import JeuDeCarte
+import django
 
-class __main__ :  
-    
+
+
+class Jeu :
+
     michel=Joueur()
     croupier1=Croupier()
-    jeu1 = JeuDeCarte()
+    jeu1 = JeuDeCarte()  
+    
+
+        
     
 
     def main (self,Joueur,Croupier,JeuDeCarte):
@@ -61,10 +67,12 @@ class __main__ :
         return main
 
     def affiche_mains_points (self,main_j,main_c) :
+        print("\n")
         print ('main joueur: ',main_j)
         print ('main croupier: ',main_c)
         print('total joueur : ',self.total_main(main_j))
         print('total croupier : ',self.total_main(main_c))
+        print('\n')
 
     def ass (self,main, total) :
 
@@ -119,11 +127,12 @@ class __main__ :
                             total_joueur = self.total_main(main_j)
                             if total_joueur>=21 :
                                 nouvellecarte='n'
-                            print('main joueur : ',main_j)
+                            print('main joueur : ',main_j,)
+                            print('\n')
                         else :
                             main_j = mn[0]
 
-                            #total_croupier= total_main(main[1])    
+                            
 
                         if total_croupier <17 :
                             main_c=self.tirer_nouvelle_carte(mn[1],reste_carte)
@@ -140,7 +149,4 @@ class __main__ :
                 self.affiche_mains_points(main_j,main_c)
                 replay=input('voulez vous rejouer ? o/n')
 
-
-        
-    self.jeu()
     
