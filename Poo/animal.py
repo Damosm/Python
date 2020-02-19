@@ -20,7 +20,7 @@ class animal :
         self.poids=poids
     
     def afficher_duree_de_vie(self):
-        print(animal.getDureedevie())
+        print(animal.getDureedevie(self))
     
     def crier(self):
         print("waaafff")

@@ -3,6 +3,7 @@ from article import article
 class stock :
 
     stockage=[]
+    toto=''
 
     def __init__(self):
         self.stockage=[]

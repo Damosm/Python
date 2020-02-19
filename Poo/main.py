@@ -32,7 +32,7 @@ if __name__ == "__main__":
     
     for i in tab :
         print(i.getCouleur())
-  
+"""  
 a1=article(1,'tasse',5,10)
 a2=article(2,'goblet',2,5)
 s1=stock()
@@ -51,13 +51,13 @@ a3=vetement(3,'pull',20,6,4,'bleu')
 a4=articleDeLuxe(4,'bague',200,2)
 print(a4.prixTTc(a4.getPrixHT()))
 print(a1.prixTTc(a1.getPrixHT()))
-"""
 
+"""
 c1=chien()
 
 c1.afficher_duree_de_vie()
 c1.crier()
-
+"""
 """
 cercle1=cercle(5)
 print(cercle1.surface())
