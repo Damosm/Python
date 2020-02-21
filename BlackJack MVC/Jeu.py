@@ -17,22 +17,15 @@ class Jeu :
     jeu1 = JeuDeCarte()  
     jeu2 = JeuDeCarte()
     
+    def __init__(self, root):
+        self.root= root
     
     # fenetre = Tk()
     # fenetre.title("BlackJack")
     # fenetre.minsize(640,480)
-    # fenetre.geometry("640x480+300+150")
+    # fenetre.geometry("640x480+300+150")  
     
     
-    
-    
-    
-    # for i in jeu1 :
-    #     print(i)
-    #     print(len(jeu1.instances))
-    # for i in jeu2:
-    #     print(i)
-    #     print(len(jeu2.instances))
 
     #verification singleton
     # print(jeu1)    
@@ -85,22 +78,25 @@ class Jeu :
 
         return main
 
-    def affiche_mains_points (self,main_j,main_c) :
-        print("\n")
-        print ('main joueur: ',main_j)
-        print ('main croupier: ',main_c)
-        print('total joueur : ',self.total_main(main_j))
-        print('total croupier : ',self.total_main(main_c))
-        print('\n')
-        # label3 = Label(self.fenetre,text=str(main_j))
-        # label4 = Label(self.fenetre,text=str(main_c))
-        # label5 = Label(self.fenetre,text=str(self.total_main(main_j)))
-        # label6 = Label(self.fenetre,text=str(self.total_main(main_c)))
-        # label3.pack()
-        # label4.pack()
-        # label5.pack()
-        # label6.pack()
+    def affiche_mains_points (self,main_j,main_c,root) :
+        # print("\n")
+        # print ('main joueur: ',main_j)
+        # print ('main croupier: ',main_c)
+        # print('total joueur : ',self.total_main(main_j))
+        # print('total croupier : ',self.total_main(main_c))
+        # print('\n')
+        label3 = Label(root,text=str(main_j))
+        label4 = Label(root,text=str(main_c))
+        label5 = Label(root,text=str(self.total_main(main_j)))
+        label6 = Label(root,text=str(self.total_main(main_c)))
+        label3.pack()
+        label4.pack()
+        label5.pack()
+        label6.pack()
 
+    def nouvelle_carte(self):
+        messagebox = messagebox.askyesno("voulez vous une carte (o/n) ?")
+        
     def ass (self,main, total) :
 
         for i,j in main.items() :
@@ -112,7 +108,7 @@ class Jeu :
         if len(main)==2 and total==21 :
             return True     
 
-    def jeu(self):           
+    def jeu(self,root):           
         
         
         
@@ -123,10 +119,10 @@ class Jeu :
             reste_carte=mn[2]
             
             
-            # label0 = Label(self.fenetre, text="Tirage : ")
-            # label0.pack()
-            # label1 = Label(self.fenetre,text=str(mn[0]))
-            # label1.pack()
+            label0 = Label(root, text="Tirage : ")
+            label0.pack()
+            label1 = Label(root,text=str(mn[0]))
+            label1.pack()
             
             
             
@@ -142,11 +138,11 @@ class Jeu :
 
             if a :
                 print('Bravo BlackJack !!!!!!!')  
-                self.affiche_mains_points(main_j,main_c)
+                self.affiche_mains_points(main_j,main_c,root)
 
             elif b :        
                 print('Courtier : BlackJack !!!!!!!')  
-                self.affiche_mains_points(main_j,main_c)
+                self.affiche_mains_points(main_j,main_c,root)
                 
             else:        
 
@@ -155,7 +151,7 @@ class Jeu :
 
                     if total_joueur<21 or nouvellecarte =='o':
                         
-                        # messagebox = messagebox.askyesno("voulez vous une carte (o/n) ?")
+                        
                         
                         nouvellecarte=input("voulez vous une carte (o/n) ?")   
                         
@@ -189,7 +185,7 @@ class Jeu :
                     else :
                         break
 
-                self.affiche_mains_points(main_j,main_c)
+                self.affiche_mains_points(main_j,main_c,root)
                 #messagebox = messagebox.askyesno('Voulez vous rejouer ?')
                 #entrer2 = Entry(fenetre,text = 'voulez vous rejouer ? o/n',with = 1)
                 #entrer2.pack()

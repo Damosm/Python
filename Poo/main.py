@@ -33,24 +33,24 @@ if __name__ == "__main__":
     for i in tab :
         print(i.getCouleur())
 """  
-a1=article(1,'tasse',5,10)
-a2=article(2,'goblet',2,5)
-s1=stock()
-s1.ajouter(a1,s1)
-s1.ajouter(a2,s1)
+# a1=article(1,'tasse',5,10)
+# a2=article(2,'goblet',2,5)
+# s1=stock()
+# s1.ajouter(a1,s1)
+# s1.ajouter(a2,s1)
 
-for i in s1.getStockage():    
-    print(i.getDesignation())
+# for i in s1.getStockage():    
+#     print(i.getDesignation())
 
-s1.retirer(a1,s1)
+# s1.retirer(a1,s1)
 
-for i in s1.getStockage():    
-    print(i.getDesignation())
+# for i in s1.getStockage():    
+#     print(i.getDesignation())
 
-a3=vetement(3,'pull',20,6,4,'bleu')
-a4=articleDeLuxe(4,'bague',200,2)
-print(a4.prixTTc(a4.getPrixHT()))
-print(a1.prixTTc(a1.getPrixHT()))
+# a3=vetement(3,'pull',20,6,4,'bleu')
+# a4=articleDeLuxe(4,'bague',200,2)
+# print(a4.prixTTc(a4.getPrixHT()))
+# print(a1.prixTTc(a1.getPrixHT()))
 
 """
 c1=chien()
@@ -58,7 +58,7 @@ c1=chien()
 c1.afficher_duree_de_vie()
 c1.crier()
 """
-"""
+
 cercle1=cercle(5)
 print(cercle1.surface())
 
@@ -67,4 +67,4 @@ print(cylindre1.volume())
 
 cone1=cone(cylindre1.getRayon(),cylindre1.getHauteur())
 print(cone1.volume())
-"""
+
