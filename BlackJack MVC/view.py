@@ -2,7 +2,7 @@ import tkinter as Tk
 from Joueur import Joueur
 from Croupier import Croupier
 from JeuDeCarte import JeuDeCarte
-from Jeu import Jeu
+
 import random
 from tkinter import messagebox
 import controller as ct

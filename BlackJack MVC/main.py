@@ -5,9 +5,9 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt 
 from tkinter import *
 
-from Croupier import Croupier
 
-from Jeu import Jeu
+
+
 
 from controller import Controller
 
